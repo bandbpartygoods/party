@@ -4,6 +4,3 @@ api_version: 1
 handlers:
 - url: /.*
   script: helloworld.php​runtime: php55
-api_version: 1
-handlers:- url: /.*  
-script: index.php
