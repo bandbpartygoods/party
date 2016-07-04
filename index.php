@@ -1,1 +1,1 @@
-<?php  echo '<blink> COMING SOON </BLINK>';
+<?php  echo '<BODY STYLE="BACKGROUND-IMAGE=LOGO.JPG"> COMING SOON </BODY>';
