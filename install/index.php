@@ -18,11 +18,13 @@ define('HTTP_OPENCART', $protocol . $_SERVER['HTTP_HOST'] . rtrim(rtrim(dirname(
 define('DIR_APPLICATION', str_replace('\\', '/', realpath(dirname(__FILE__))) . '/');
 define('DIR_SYSTEM', str_replace('\\', '/', realpath(dirname(__FILE__) . '/../')) . '/system/');
 define('DIR_OPENCART', str_replace('\\', '/', realpath(DIR_APPLICATION . '../')) . '/');
-define('DIR_MODIFICATION', DIR_SYSTEM . 'storage/modification/');
+#define('DIR_MODIFICATION', DIR_SYSTEM . 'storage/modification/');
+define('DIR_MODIFICATION','gs://goods-1356.appspot.com/system/storage/modification/');
 define('DIR_LANGUAGE', DIR_APPLICATION . 'language/');
 define('DIR_TEMPLATE', DIR_APPLICATION . 'view/template/');
 define('DIR_CONFIG', DIR_SYSTEM . 'config/');
-define('DIR_CACHE', DIR_SYSTEM . 'storage/cache/');
+#define('DIR_CACHE', DIR_SYSTEM . 'storage/cache/');
+define('DIR_CACHE', 'gs://goods-1356.appspot.com/system/storage/cache/');
 
 // Startup
 require_once(DIR_SYSTEM . 'startup.php');

@@ -269,11 +269,10 @@ function write_config_files($options) {
 	$output .= 'define(\'DB_PORT\', \'' . addslashes($options['db_port']) . '\');' . "\n";
 	$output .= '?>';
 
-	$file = fopen(DIR_OPENCART . 'config.php', 'w');
-
-	fwrite($file, $output);
-
-	fclose($file);
+	#$file = fopen(DIR_OPENCART . 'config.php', 'w');
+	#fwrite($file, $output);
+	#fclose($file);
+	file_put_contents("gs://goods-1356.appspot.com/config.php", $output);
 
 	$output  = '<?php' . "\n";
 	$output .= '// HTTP' . "\n";
@@ -309,15 +308,15 @@ function write_config_files($options) {
 	$output .= 'define(\'DB_PORT\', \'' . addslashes($options['db_port']) . '\');' . "\n";
 	$output .= '?>';
 
-	$file = fopen(DIR_OPENCART . 'admin/config.php', 'w');
+	#$file = fopen(DIR_OPENCART . 'admin/config.php', 'w');
+	#fwrite($file, $output);
+	#fclose($file);
 
-	fwrite($file, $output);
-
-	fclose($file);
+	file_put_contents("gs://goods-1356.appspot.com/admin/config.php", $output);
 }
 
 
-function dir_permissions() {
+/*function dir_permissions() {
 	$dirs = array(
 		DIR_OPENCART . 'image/',
 		DIR_OPENCART . 'system/storage/download/',
@@ -325,6 +324,18 @@ function dir_permissions() {
 		DIR_OPENCART . 'system/storage/cache/',
 		DIR_OPENCART . 'system/storage/logs/',
 		DIR_OPENCART . 'system/storage/modification/',
+	);
+	exec('chmod o+w -R ' . implode(' ', $dirs));
+}*/
+
+function dir_permissions() {
+	$dirs = array(
+		'gs://goods-1356.appspot.com/image/',
+		'gs://goods-1356.appspot.com/system/storage/download/',
+		'gs://goods-1356.appspot.com/system/storage/upload/',
+		'gs://goods-1356.appspot.com/system/storage/cache/',
+		'gs://goods-1356.appspot.com/system/storage/logs/',
+		'gs://goods-1356.appspot.com/system/storage/modification/',
 	);
 	exec('chmod o+w -R ' . implode(' ', $dirs));
 }

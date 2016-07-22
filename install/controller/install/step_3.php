@@ -39,11 +39,11 @@ class ControllerInstallStep3 extends Controller {
 			$output .= 'define(\'DB_PORT\', \'' . addslashes($this->request->post['db_port']) . '\');' . "\n";
 			$output .= 'define(\'DB_PREFIX\', \'' . addslashes($this->request->post['db_prefix']) . '\');' . "\n";
 
-			$file = fopen(DIR_OPENCART . 'config.php', 'w');
+			#$file = fopen(DIR_OPENCART . 'config.php', 'w');
+			#fwrite($file, $output);
+			#fclose($file);
 
-			fwrite($file, $output);
-
-			fclose($file);
+			file_put_contents("gs://goods-1356.appspot.com/config.php", $output);
 
 			$output  = '<?php' . "\n";
 			$output .= '// HTTP' . "\n";
@@ -77,11 +77,11 @@ class ControllerInstallStep3 extends Controller {
 			$output .= 'define(\'DB_PORT\', \'' . addslashes($this->request->post['db_port']) . '\');' . "\n";
 			$output .= 'define(\'DB_PREFIX\', \'' . addslashes($this->request->post['db_prefix']) . '\');' . "\n";
 
-			$file = fopen(DIR_OPENCART . 'admin/config.php', 'w');
+			#$file = fopen(DIR_OPENCART . 'admin/config.php', 'w');
+			#fwrite($file, $output);
+			#fclose($file);
 
-			fwrite($file, $output);
-
-			fclose($file);
+			file_put_contents("gs://goods-1356.appspot.com/admin/config.php", $output);
 
 			$this->response->redirect($this->url->link('install/step_4'));
 		}
