@@ -151,7 +151,7 @@ class ControllerInstallStep2 extends Controller {
 			$this->error['warning'] = $this->language->get('error_mbstring');
 		}
 		
-		if (!file_exists(DIR_OPENCART . 'config.php')) {
+		/*if (!file_exists(DIR_OPENCART . 'config.php')) {
 			$this->error['warning'] = $this->language->get('error_catalog_exist');
 		} elseif (!is_writable(DIR_OPENCART . 'config.php')) {
 			$this->error['warning'] = $this->language->get('error_catalog_writable');
@@ -192,6 +192,50 @@ class ControllerInstallStep2 extends Controller {
 		}
 
 		if (!is_writable(DIR_SYSTEM . 'storage/modification')) {
+			$this->error['warning'] = $this->language->get('error_modification');
+		}*/
+
+		if (!file_exists('gs://goods-1356.appspot.com/config.php')) {
+			$this->error['warning'] = $this->language->get('error_catalog_exist');
+		} elseif (!is_writable('gs://goods-1356.appspot.com/config.php')) {
+			$this->error['warning'] = $this->language->get('error_catalog_writable');
+		}
+
+		if (!file_exists(DIR_OPENCART . 'admin/config.php')) {
+			$this->error['warning'] = $this->language->get('error_admin_exist');
+		} elseif (!is_writable(DIR_OPENCART . 'admin/config.php')) {
+			$this->error['warning'] = $this->language->get('error_admin_writable');
+		}
+
+		if (!is_writable('gs://goods-1356.appspot.com/image')) {
+			$this->error['warning'] = $this->language->get('error_image');
+		}
+
+		if (!is_writable('gs://goods-1356.appspot.com/image/cache')) {
+			$this->error['warning'] = $this->language->get('error_image_cache');
+		}
+
+		if (!is_writable('gs://goods-1356.appspot.com/image/catalog')) {
+			$this->error['warning'] = $this->language->get('error_image_catalog');
+		}
+		
+		if (!is_writable('gs://goods-1356.appspot.com/system/storage/cache')) {
+			$this->error['warning'] = $this->language->get('error_cache');
+		}
+
+		if (!is_writable('gs://goods-1356.appspot.com/system/storage/logs')) {
+			$this->error['warning'] = $this->language->get('error_log');
+		}
+
+		if (!is_writable('gs://goods-1356.appspot.com/system/storage/download')) {
+			$this->error['warning'] = $this->language->get('error_download');
+		}
+
+		if (!is_writable('gs://goods-1356.appspot.com//system/storage/upload')) {
+			$this->error['warning'] = $this->language->get('error_upload');
+		}
+
+		if (!is_writable('gs://goods-1356.appspot.com/system/storage/modification')) {
 			$this->error['warning'] = $this->language->get('error_modification');
 		}
 
