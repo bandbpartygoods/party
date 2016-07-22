@@ -82,9 +82,8 @@ class ControllerInstallStep2 extends Controller {
 		$data['iconv'] = function_exists('iconv');
 		$data['mbstring'] = extension_loaded('mbstring');
 
-		$data['config_catalog'] = DIR_OPENCART . 'config.php';
+		/*$data['config_catalog'] = DIR_OPENCART . 'config.php';
 		$data['config_admin'] = DIR_OPENCART . 'admin/config.php';
-		
 		$data['image'] = DIR_OPENCART . 'image';
 		$data['image_cache'] = DIR_OPENCART . 'image/cache';
 		$data['image_catalog'] = DIR_OPENCART . 'image/catalog';
@@ -92,7 +91,19 @@ class ControllerInstallStep2 extends Controller {
 		$data['logs'] = DIR_SYSTEM . 'storage/logs';
 		$data['download'] = DIR_SYSTEM . 'storage/download';
 		$data['upload'] = DIR_SYSTEM . 'storage/upload';
-		$data['modification'] = DIR_SYSTEM . 'storage/modification';
+		$data['modification'] = DIR_SYSTEM . 'storage/modification';*/
+		
+
+		$data['config_catalog'] = 'gs://goods-1356.appspot.com/config.php';
+		$data['config_admin'] =  'gs://goods-1356.appspot.com/admin/config.php';
+		$data['image'] =  'gs://goods-1356.appspot.com/image';
+		$data['image_cache'] =  'gs://goods-1356.appspot.com/image/cache';
+		$data['image_catalog'] =  'gs://goods-1356.appspot.com/image/catalog';
+		$data['cache'] =  'gs://goods-1356.appspot.com/system/storage/cache';
+		$data['logs'] =  'gs://goods-1356.appspot.com/system/storage/logs';
+		$data['download'] =  'gs://goods-1356.appspot.com/system/storage/download';
+		$data['upload'] = 'gs://goods-1356.appspot.com/system/storage/upload';
+		$data['modification'] = 'gs://goods-1356.appspot.com/system/storage/modification';
 
 		$data['back'] = $this->url->link('install/step_1');
 
@@ -195,7 +206,7 @@ class ControllerInstallStep2 extends Controller {
 			$this->error['warning'] = $this->language->get('error_modification');
 		}*/
 
-		if (!file_exists('gs://goods-1356.appspot.com/config.php')) {
+		/*if (!file_exists('gs://goods-1356.appspot.com/config.php')) {
 			$this->error['warning'] = $this->language->get('error_catalog_exist');
 		} elseif (!is_writable('gs://goods-1356.appspot.com/config.php')) {
 			$this->error['warning'] = $this->language->get('error_catalog_writable');
@@ -231,13 +242,13 @@ class ControllerInstallStep2 extends Controller {
 			$this->error['warning'] = $this->language->get('error_download');
 		}
 
-		if (!is_writable('gs://goods-1356.appspot.com//system/storage/upload')) {
+		if (!is_writable('gs://goods-1356.appspot.com/system/storage/upload')) {
 			$this->error['warning'] = $this->language->get('error_upload');
 		}
 
 		if (!is_writable('gs://goods-1356.appspot.com/system/storage/modification')) {
 			$this->error['warning'] = $this->language->get('error_modification');
-		}
+		}*/
 
 		return !$this->error;
 	}
