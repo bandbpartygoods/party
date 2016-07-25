@@ -3,8 +3,8 @@
 define('VERSION', '2.2.0.0');
 
 // Configuration
-if (is_file('config.php')) {
-	require_once('config.php');
+if (is_file('gs://goods-1356.appspot.com/admin/config.php')) {
+	require_once('gs://goods-1356.appspot.com/admin/config.php');
 }
 
 // Install

@@ -262,8 +262,9 @@ class ControllerInstallStep3 extends Controller {
 			$this->error['db_prefix'] = $this->language->get('error_db_prefix');
 		}
 
-		if ($this->request->post['db_driver'] == 'mysqli') {
+		/*if ($this->request->post['db_driver'] == 'mysqli') {
 			$mysql = @new MySQLi($this->request->post['db_hostname'], $this->request->post['db_username'], html_entity_decode($this->request->post['db_password'], ENT_QUOTES, 'UTF-8'), $this->request->post['db_database'], $this->request->post['db_port']);
+			#$mysql = @new MySQLi('104.196.156.143', 'root', html_entity_decode('r00t', ENT_QUOTES, 'UTF-8'), #'opencart','3306','/cloudsql/goods-1356:us-east1:opencart');
 
 			if ($mysql->connect_error) {
 				$this->error['warning'] = $mysql->connect_error;
@@ -276,7 +277,7 @@ class ControllerInstallStep3 extends Controller {
 			} catch(Exception $e) {
 				$this->error['warning'] = $e->getMessage();
 			}
-		}			
+		}*/			
 		
 		if (!$this->request->post['username']) {
 			$this->error['username'] = $this->language->get('error_username');
@@ -290,13 +291,13 @@ class ControllerInstallStep3 extends Controller {
 			$this->error['email'] = $this->language->get('error_email');
 		}
 
-		if (!is_writable(DIR_OPENCART . 'config.php')) {
+		/*if (!is_writable('gs://goods-1356.appspot.com/config.php')) {
 			$this->error['warning'] = $this->language->get('error_config') . DIR_OPENCART . 'config.php!';
 		}
 
-		if (!is_writable(DIR_OPENCART . 'admin/config.php')) {
+		if (!is_writable('gs://goods-1356.appspot.com/admin/config.php')) {
 			$this->error['warning'] = $this->language->get('error_config') . DIR_OPENCART . 'admin/config.php!';
-		}
+		}*/
 
 		return !$this->error;
 	}

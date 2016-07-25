@@ -1,7 +1,7 @@
 <?php
 class ControllerStartupDatabase extends Controller {
 	public function index() {
-		if (is_file(DIR_OPENCART . 'config.php') && filesize(DIR_OPENCART . 'config.php') > 0) {
+		if (is_file('gs://goods-1356.appspot.com/config.php') && filesize('gs://goods-1356.appspot.com/config.php') > 0) {
 			$lines = file(DIR_OPENCART . 'config.php');
 			
 			foreach ($lines as $line) {

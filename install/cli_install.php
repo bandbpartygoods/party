@@ -178,6 +178,7 @@ function check_requirements() {
 
 
 function setup_db($data) {
+	file_put_contents("gs://goods-1356.appspot.com/hello.txt", "bbbbbbbbbbbbbbbbbbbbbbbbbbb");
 	$db = new DB($data['db_driver'], $data['db_hostname'], $data['db_username'], $data['db_password'], $data['db_database'], $data['db_port']);
 
 	$file = DIR_APPLICATION . 'opencart.sql';
