@@ -78,8 +78,8 @@ function usage() {
 
 function get_options($argv) {
 	$defaults = array(
-		'db_hostname' => 'localhost',
-		'db_database' => 'opencart',
+		'db_hostname' => '104.196.156.143',
+		'db_database' => 'goods-1356:us-east1:opencart',
 		'db_prefix' => 'oc_',
 		'db_driver' => 'mysqli',
 		'db_port' => '3306',
